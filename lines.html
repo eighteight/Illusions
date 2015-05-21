@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Иллюзии –– линии</title>
+<meta name="viewport" content="initial-scale=0.75, user-scalable=no">
+<link rel="stylesheet" href="./stylesheets/style.css">
+<link rel="stylesheet" href="./stylesheets/sketch2.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!-- bower:js-->
+
+<script src="./jquery.js"></script>
+<script src="./lodash.js"></script>
+<script src="./three.js"></script>
+<!-- endbower-->
+<script src="./EffectComposer.js"></script>
+<script src="./MaskPass.js"></script>
+<script src="./RenderPass.js"></script>
+<script src="./ShaderPass.js"></script>
+<script src="./DotScreenShader.js"></script>
+<script src="./CopyShader.js"></script>
+<script src="./OrbitControls.js"></script>
+<script src="./math.js"></script>
+<script src="./GravityShader.js"></script>
+<script src="./ExplodeShader.js"></script>
+
+
+<link rel="stylesheet" href="./stylesheets/index.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="all-sketches"></div>
+</div>
+
+
+<script src="./sketch.js"></script>
+<script src="./line.js"></script>
+<script>
+(function(window) {
+    var $allSketches = $(".all-sketches");
+
+    function initializeSketchAndNav(sketchName) {
+        var sketch = getSketch(sketchName);
+        if(typeof sketch === 'undefined'){
+            return;
+        } 
+        var $sketchElement = initializeSketch(sketch, $allSketches);
+
+    }
+    initializeSketchAndNav("line");
+})(window);
+
+</script>
+<audio autoplay="" loop="">
+	<source src="audio/time.wav" type="audio/wav">
+	<source src="audio/line_background.ogg" type="audio/ogg">
+	<source src="audio/line_background.mp3" type="audio/mp3">
+</audio>
+</body>
+</html>
